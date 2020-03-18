@@ -33,7 +33,7 @@ apt-get --yes --auto-remove --show-upgraded \
 omv-initsystem
 
 # Fixing some Issues
-sed -i 's/def remove(wr, selfref=ref(self))/def remove(wr, selfref=ref(self), _atomic_removal=_remove_dead_weakref):/g' /usr/lib/python3.5/weakref.py
+sed -i 's/def remove(wr, selfref=ref(self))/def remove(wr, selfref=ref(self), _atomic_removal=_remove_dead_weakref)/g' /usr/lib/python3.5/weakref.py
 sed -i 's/_remove_dead_weakref(d, wr.key)/_atomic_removal(d, wr.key)/g' /usr/lib/python3.5/weakref.py
 
 # Installing OMV-Extra Plugins
